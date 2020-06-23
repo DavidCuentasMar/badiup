@@ -18,11 +18,32 @@ void main() {
         driver.close();
       }
     });
-
-    test('[ Customer ] ', () async {
-      print('Customer');
+    test('[Admin - Logout]', () async {
+      await driver.tap(find.byValueKey(makeTestKeyString(
+        TKUsers.user,
+        TKScreens.login,
+        "loginButton",
+      )));
+      print('Tapped login');
+      await driver.tap(find.byValueKey(makeTestKeyString(
+        TKUsers.admin,
+        TKScreens.home,
+        "openDrawerButton",
+      )));
+      print('Opened drawer');
+      await driver.tap(find.byValueKey(makeTestKeyString(
+        TKUsers.admin,
+        TKScreens.drawer,
+        "adminLogout",
+      )));
+      print('Logout clicked');
+      await driver.tap(find.byValueKey(makeTestKeyString(
+        TKUsers.admin,
+        TKScreens.drawer,
+        "adminLogoutConfirm",
+      )));
+      print('Logout confirm clicked');
     });
-
     test('admin product management test', () async {
       await driver.tap(find.byValueKey(makeTestKeyString(
         TKUsers.user,

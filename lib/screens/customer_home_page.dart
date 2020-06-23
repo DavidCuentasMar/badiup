@@ -11,6 +11,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
+import '../test_keys.dart';
+
 class CustomerHomePage extends StatefulWidget {
   CustomerHomePage({Key key, this.title}) : super(key: key);
 
@@ -148,7 +150,11 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     return SizedBox(
       width: width * 0.7,
       child: Drawer(
-        key: scaffoldKey,
+        key: Key(makeTestKeyString(
+          TKUsers.customer,
+          TKScreens.home,
+          "openDrawerButton",
+        )),
         child: MainMenu(),
       ),
     );

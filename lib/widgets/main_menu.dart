@@ -224,6 +224,11 @@ class _MainMenuState extends State<MainMenu> {
 
   Widget _buildDrawerLogoutTile(BuildContext context) {
     return ListTile(
+      key: Key(makeTestKeyString(
+        TKUsers.admin,
+        TKScreens.drawer,
+        "adminLogout",
+      )),
       leading: Icon(Icons.exit_to_app, color: kPaletteWhite),
       title: Text(
         'ログアウト',
@@ -265,6 +270,11 @@ class _MainMenuState extends State<MainMenu> {
         },
       ),
       FlatButton(
+        key: Key(makeTestKeyString(
+          TKUsers.admin,
+          TKScreens.drawer,
+          "adminLogoutConfirm",
+        )),
         child: Text(
           'はい',
           style: TextStyle(color: paletteForegroundColor),
