@@ -19,6 +19,10 @@ void main() {
       }
     });
 
+    test('[ Customer ] ', () async {
+      print('Customer');
+    });
+
     test('admin product management test', () async {
       await driver.tap(find.byValueKey(makeTestKeyString(
         TKUsers.user,
